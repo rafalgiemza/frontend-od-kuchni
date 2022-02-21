@@ -1,12 +1,13 @@
 const siteMetadata = {
-  title: 'Next.js Starter Blog',
-  author: 'Tails Azimuth',
+  title: 'Frontend od kuchni',
+  author: 'Rafał Giemza',
   headerTitle: 'TailwindBlog',
-  description: 'A blog created with Next.js and Tailwind.css',
-  language: 'en-us',
+  description:
+    'Cześć! Witaj na moim blogu gdzie znajdziesz artykuły o szeroko pojętym front-endzie. Niektóre będą skupione na aspektach technicznych, inne bardziej na umiejętnościach miękkich. Jestem głęboko przekonany, iż zaniedbanie jednej lub drugiej sfery prowadzi do katastrofy. ',
+  language: 'pl',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
-  siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
+  siteUrl: 'https://frontend-od-kuchni.vercel.app',
+  siteRepo: 'https://github.com/rafalgiemza/frontend-od-kuchni',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
