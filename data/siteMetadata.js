@@ -1,7 +1,7 @@
 const siteMetadata = {
   title: 'Frontend od kuchni',
   author: 'Rafał Giemza',
-  headerTitle: 'TailwindBlog',
+  headerTitle: 'Frontend od kuchni',
   description:
     'Cześć! Witaj na moim blogu gdzie znajdziesz artykuły o szeroko pojętym front-endzie. Niektóre będą skupione na aspektach technicznych, inne bardziej na umiejętnościach miękkich. Jestem głęboko przekonany, iż zaniedbanie jednej lub drugiej sfery prowadzi do katastrofy. ',
   language: 'pl',
@@ -10,14 +10,14 @@ const siteMetadata = {
   siteRepo: 'https://github.com/rafalgiemza/frontend-od-kuchni',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
-  socialBanner: '/static/images/baner.png',
+  socialBanner: '/static/images/twiter-card.png',
   email: 'frontendodkuchni@gmail.com',
   github: 'https://github.com/rafalgiemza',
   twitter: 'https://twitter.com/Twitter',
   facebook: 'https://facebook.com',
   youtube: 'https://youtube.com',
   linkedin: 'https://www.linkedin.com',
-  locale: 'en-US',
+  locale: 'pl-PL',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
     // content security policy in the `next.config.js` file.
@@ -30,7 +30,7 @@ const siteMetadata = {
   newsletter: {
     // supports mailchimp, buttondown, convertkit, klaviyo
     // Please add your .env file and modify it according to your selection
-    provider: 'buttondown',
+    provider: '',
   },
   comment: {
     // If you want to use a commenting system other than giscus you have to add it to the

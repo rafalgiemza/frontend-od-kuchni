@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Disqus = ({ frontMatter }: Props) => {
-  const [enableLoadComments, setEnabledLoadComments] = useState(true)
+  const [enableLoadComments, setEnabledLoadComments] = useState(false)
 
   const COMMENTS_ID = 'disqus_thread'
 
