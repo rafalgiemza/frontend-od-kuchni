@@ -3,7 +3,7 @@ const siteMetadata = {
   author: 'Rafał Giemza',
   headerTitle: 'Frontend od kuchni',
   description:
-    'Cześć! Witaj na moim blogu gdzie znajdziesz artykuły o szeroko pojętym front-endzie. Niektóre będą skupione na aspektach technicznych, inne bardziej na umiejętnościach miękkich. Jestem głęboko przekonany, iż zaniedbanie jednej lub drugiej sfery prowadzi do katastrofy. ',
+    'Cześć! Witaj na moim blogu gdzie znajdziesz artykuły o szeroko pojętym frontendzie. Niektóre będą skupione na aspektach technicznych, inne bardziej na umiejętnościach miękkich. Jestem głęboko przekonany, iż zaniedbanie jednej lub drugiej sfery prowadzi do katastrofy. ',
   language: 'pl',
   theme: 'system', // system, dark or light
   siteUrl: 'https://frontend-od-kuchni.vercel.app',
