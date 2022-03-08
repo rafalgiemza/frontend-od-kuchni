@@ -10,5 +10,3 @@ github: https://github.com/rafalgiemza
 ---
 
 Mąż, ojciec, programista. Na tym blogu dzielę się najlepszymi praktykami z świata frontenedu. Intersują mnie zarówno zagadnienia techniczne jak i te związane z umiejętnościami miękkimi.
-
-Będzie mi bardzo miło jeśli moje treści wniosą realną wartość do Twojego życia.
