@@ -1,0 +1,87 @@
+---
+title: 'Best food app - środowisko developerskie'
+date: '2022-03-31'
+lastmod: '2022-03-31'
+tags: ['best-food-app', 'bf3', 'busines', 'hard-skills']
+draft: false
+summary: 'Jakich używam narzędzi, aby kodowanie frontendu było przyjemnością? Wszystko wyjaśnię w tym artykule'
+layout: PostSimple
+bibliography: references-data.bib
+---
+
+Jakich używam narzędzi, aby kodowanie frontendu było przyjemnością? Wszystko wyjaśnię w tym artykule. Postanowiłem podzielić go na dwie części. W pierszej skupię się na oprogramwaniu. W drugiej podzielę się wiedzą na temat konfiguracji narzędzi wspomagających mnie w programowaniu. 
+
+## Oprogramwanie
+
+Niezbędne w mojej pracy są:
+- git
+- node (wraz z npm)
+- visual studio code
+- cmder
+
+Kilka słów o każdym z tych narzędzi
+
+### git
+Git jest systemem kontroli wersji, bez którego nie wyobrażam sobie żadnego projektu. Jest bardzo użyteczny w pracy dla jednej osoby, a jego prawdziwa wartość w zespole programistów jest wręcz nieoceniona. Oczywiście, jest pewien próg wejścia i bez poświęcenia odrobiny czasu można stwierdzić, że to bez sensu. Sam miałem takie podejście na początku mojej kartiery IT. Zapewniam, zainwestowane minuty czy godziny zwracją się wieloktronie.
+
+[https://git-scm.com](https://git-scm.com)
+
+### node (wraz z npm)
+Node jest środowiskiem uruchomieniowym JavaScript. W gratisie dostajemy również npm. Od tego momentu mamy łatwy dostęp do ogromnej ilości darmowych paczek kodu. Zwykle pobieram wersję LTE. Jeżeli potrzebuję mieć więcej niż 1 wersję node to sięgam po nvm (node version manager) lub fnm (fast node manager). Opcjonalnie można dorzucić yarn.
+
+[https://nodejs.org](https://nodejs.org/en)
+
+### visual studio code
+Zintegrowane środowisko programistyczne (aka IDE). Ja wybrałem Visual Studio Code z kilku powodów. Jest popularne, szybko się uruchamia, ma wiele możliwych rozszerzeń i integruje się z moją ulubioną konsolą, cmder'em.
+
+[https://code.visualstudio.com](https://code.visualstudio.com/)
+
+### cmder
+Empulator konsoli Unix. Dzięki niemu mogę używać komend linuxowych pracując na Windows. Nie wspomianając o podpowiedziach i to wszystko w ładnym opakowaniu. Alternatywnie może być `git bash`, który domyślnie jest instalowany wraz z gitem.
+
+[https://cmder.net](https://cmder.net/)
+
+
+## Konfiguracja
+
+Bazą projektu best-food-app będzie next.js. Jest to framwork zbudowany na bibliotece react. 
+
+```yarn create next-app --typescript```
+
+Domyślnie next.js ma podstawową konfigurację eslint. Warto dorzucić do teego zestawu prettier wraz z odpowiednią konfiguracją.
+
+
+```yarn add prettier eslint-config-prettier @typescript-eslint/eslint-plugin```
+
+
+.eslintrc
+
+```
+{
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ]
+}
+```
+
+
+.prettierrc.json
+
+```
+  {  
+    "semi": false,
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "useTabs": false
+  }
+```
+
+To co opisałem wyżej będzie w mniejszym lub większym stopniu wspólne z innymi projektami. Akurat ten projekt będzie opart o taiwlwind (a nie o mui jak zapowiadałem w poprzednim wpisie).
+
+```yarn add tailwindcss```
+
+Do zobaczenia w następnym artykule, w którym zajmiemy się routingiem.
+
