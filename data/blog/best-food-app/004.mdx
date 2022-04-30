@@ -1,0 +1,127 @@
+---
+title: 'Best food app - routing'
+date: '2022-04-30'
+lastmod: '2022-04-30'
+tags: ['best-food-app', 'bf4', 'routing', 'hard-skills']
+draft: false
+summary: 'Czy routing może być prosty? Czy można w łatwy sposób zaimplementować kilka technik rendeerowania stron? W next.js jak najbardziej tak.'
+layout: PostSimple
+bibliography: references-data.bib
+---
+
+Coś w routingu ogólnie i w next.js
+
+Większość aplikacji webowych potrzebuje routingu, nie inaczej jest w przypadku best food app. Mamy stronę główną, listę restauracji, listę dań każdej z nich oraz koszyk z podsumowaniem. Od razu też warto zastanowić się, jak często treści na każdej z tych stron będą się zmieniać.
+Rozpiszmy to:
+
+Strona główna, to typowa strona lądowania, tzw. 'landing page'. Treści praktycznie nie będą się zmieniać, ma być bardzo szybka i SEO jest bardzo ważne. Zastosujmy tutaj statyczną stronę (SSG, czyli static site generation).
+
+adres: `/`
+
+ścieżka: `pages/index.js`
+
+```js
+import type { NextPage } from 'next'
+
+const Home: NextPage = () => {
+  return (
+    <main>
+      <h1>HOME</h1>
+    </main>
+  )
+}
+
+export default Home
+
+```
+
+Lista restauracji będzie inna dla każdego z zapytań. Ma się pojawić szybko, a SEO nie jest istotne. Tutaj idealnie będzie użyć SWR
+
+adres: `/restaurants`
+
+ścieżka: `pages/restaurants.js`
+
+```js
+export default function Restaurants() {
+  // TODO: useSWR
+
+  return (
+    <>
+      <h1>Restaurants:</h1>
+      {/* // TODO: Show restaurants */}
+    </>
+  )
+}
+
+```
+
+W przypadku pojedynczej restauracji SEO jest bardzo ważne, dlatego zdecydowałem się na SSR (Server Side Rendering). Tutaj wykorzystam specjalną metodę wbudowaną w framework: `getServerSideProps`.
+
+adres: `/restaurant/xyz`
+
+ścieżka: `/restaurant/[restaurant].js`
+
+```js
+import { GetServerSideProps } from 'next'
+
+const Restaurant = ({ data }: RestaurantProps) => {
+  return (
+    <>
+      <h1>Restaurant: data.name</h1>
+      {/* // TODO: Show rest restaurant details */}
+    </>
+  )
+}
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  // TODO: Fetch data from external API
+  const restaurant = { name: 'xyz' };
+  // TODO: Pass data to the page via props
+  return { props: { data: { restaurant } } }
+}
+
+export default Restaurant
+```
+
+Szczegóły dania również wyrenderuję z pomocą SWR.
+
+adres: `/restaurant/[restaurant]/dish/[dish]`
+
+ścieżka: `pages/restaurant/xy/dish/123.js`
+
+```js
+export default function Dish() {
+  // TODO: useSWR
+
+  return (
+    <>
+      <h1>Dish:</h1>
+      {/* // TODO: Show dish details */}
+    </>
+  )
+}
+
+```
+
+Koszyk ma być szybki i SEO nie ma znaczenia, a więc ponownie SWR.
+
+adres: `/cart`
+
+ścieżka: `pages/cart.js`
+
+```js
+export default function Cart() {
+  // TODO: useSWR
+
+  return (
+    <>
+      <h1>Cart:</h1>
+      {/* // TODO: Show cart details */}
+    </>
+  )
+}
+
+```
+
+W następnym artykule dodamy SWR oraz podstawowe API z lokalnymi zamockowanymi danymi.
+
